@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Şans Kurabiyesi - Olumlama</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      color: #4a2c00;
+      text-align: center;
+      flex-direction: column;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px 20px;
+      max-width: 400px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    h1 {
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      min-height: 80px;
+    }
+    button {
+      background: #f8b500;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      color: #4a2c00;
+      box-shadow: 0 4px 8px rgba(248,181,0,0.5);
+    }
+    button:hover {
+      background: #d19500;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Bugünkü Şans Kurabiyen 🍪</h1>
+    <p id="fortuneText">Yükleniyor...</p>
+    <button id="newFortuneBtn">Bir tane daha!</button>
+  </div>
+  <footer>Olumlama uygulaması</footer>
+
+  <script>
+    const fortunes = [
+      "Bugün senin günün olacak!",
+      "Hayat sana güzel sürprizler hazırlıyor.",
+      "İçindeki ışık her zaman parlamaya devam edecek.",
+      "Sen düşündüğünden çok daha güçlüsün.",
+      "Her gün yeni bir başlangıçtır.",
+      "Başarı, sabrın ve azmin sonucudur.",
+      "Pozitif enerji seni her zaman bulur.",
+      "Küçük adımlar büyük mutluluklara dönüşür.",
+      "Kendine inan, dünya sana inanacak.",
+      "Gülümsemenin gücü tüm engelleri aşar.",
+      "Bugün harika şeyler seni bekliyor.",
+      "Sevgi ve mutluluk seni saracak.",
+      "Kendini sev, değerini bil.",
+      "Zorluklar seni daha da güçlendirir.",
+      "Mutluluk, senin içinde bir yolculuktur.",
+      "Her nefes yeni umutlar getirir.",
+      "Bugün bir mucize olabilir.",
+      "Hayallerin gerçek olacak kadar büyük.",
+      "İyi düşün, iyi olsun.",
+      "Sen her şeyin en iyisini hak ediyorsun."
+    ];
+
+    const fortuneText = document.getElementById('fortuneText');
+    const newFortuneBtn = document.getElementById('newFortuneBtn');
+
+    function showRandomFortune() {
+      const randomIndex = Math.floor(Math.random() * fortunes.length);
+      fortuneText.textContent = fortunes[randomIndex];
+    }
+
+    window.onload = showRandomFortune;
+    newFortuneBtn.addEventListener('click', showRandomFortune);
+  </script>
+</body>
+</html>
